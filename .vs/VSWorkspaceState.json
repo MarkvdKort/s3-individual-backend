@@ -3,8 +3,9 @@
     "",
     "\\HoopflixAPI",
     "\\HoopflixAPI\\HoopflixAPI",
+    "\\HoopflixAPI\\HoopflixAPI\\Controllers",
     "\\HoopflixAPI\\HoopflixAPI\\Models"
   ],
-  "SelectedNode": "\\HoopflixAPI\\HoopflixAPI\\Models\\User.cs",
+  "SelectedNode": "\\HoopflixAPI\\HoopflixAPI.sln",
   "PreviewInSolutionExplorer": false
 }
