@@ -27,6 +27,11 @@ namespace HoopflixAPI.Repositories
             usercontext.Users.FirstOrDefault(x => x.ID == id);
             return await usercontext.Users.FindAsync(id);
         }
+        public int GetByAuthId(string authid)
+        {
+           User user = usercontext.Users.FirstOrDefault(x => x.AuthID == authid);
+            return user.ID;
+        }
         public async Task<IEnumerable<User>> Get()
         {
             return await usercontext.Users.ToListAsync();

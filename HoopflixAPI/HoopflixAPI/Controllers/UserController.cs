@@ -24,6 +24,11 @@ namespace HoopflixAPI.Controllers
         {
             return await _userRepository.GetById(id);
         }
+        [HttpGet("/authid{authid}")]
+        public int GetUserIDByAuthID(string authid)
+        {
+            return _userRepository.GetByAuthId(authid);
+        }
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody]User user)
         {

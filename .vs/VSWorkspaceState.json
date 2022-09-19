@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HoopflixAPI",
+    "\\HoopflixAPI\\HoopflixAPI",
+    "\\HoopflixAPI\\HoopflixAPI\\Models"
   ],
-  "SelectedNode": "\\C:\\Users\\markv\\Source\\Repos\\s3-individual-backend",
+  "SelectedNode": "\\HoopflixAPI\\HoopflixAPI\\Models\\User.cs",
   "PreviewInSolutionExplorer": false
 }
