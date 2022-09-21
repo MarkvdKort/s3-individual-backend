@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Usercontext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
 builder.Services.AddDbContext<LikeContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
 builder.Services.AddDbContext<CurrentlyWatchingContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
+builder.Services.AddDbContext<ViewHistoryContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
+builder.Services.AddScoped<IViewHistoryRepository, ViewHistoryRepository>();
 builder.Services.AddScoped<ILikeRepository, LikeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICurrentlyWatchingRepository, CurrentlyWatchingRepository>();
