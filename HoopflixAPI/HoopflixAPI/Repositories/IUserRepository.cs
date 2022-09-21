@@ -8,6 +8,6 @@ namespace HoopflixAPI.Repositories
         Task<User> GetById(int id);
         Task<User> Create(User user);
         Task Delete(int id);
-        int GetByAuthId(string authid);
+        int? GetByAuthId(string authid);
     }
 }

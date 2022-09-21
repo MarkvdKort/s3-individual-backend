@@ -16,12 +16,12 @@ namespace HoopflixAPI.Controllers
             _likeRepository = IlikeRepository;
         }
         [HttpGet("{id}")]
-        public List<Like> GetLikesByID(int id)
+        public List<Like> GetLikesFromUser(int id)
         {
             return _likeRepository.GetLikesFromUser(id);
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Like>> DeleteLike(int id)
+        public async Task<ActionResult<Like>> Delete(int id)
         {
             //var deleteBook = await likeRepository.get(id);
             //if (deleteBook == null)
@@ -32,7 +32,7 @@ namespace HoopflixAPI.Controllers
             return NoContent();
         }
         [HttpPost]
-        public async Task<ActionResult<Like>> CreateLike([FromBody] Like like)
+        public async Task<ActionResult<Like>> Create([FromBody] Like like)
         {
             var newUser = await _likeRepository.Create(like);
             return null;
