@@ -6,6 +6,6 @@
     "\\HoopflixAPI\\HoopflixAPI\\Controllers",
     "\\HoopflixAPI\\HoopflixAPI\\Models"
   ],
-  "SelectedNode": "\\HoopflixAPI\\HoopflixAPI\\Program.cs",
+  "SelectedNode": "\\HoopflixAPI\\HoopflixAPI\\Controllers\\UserController.cs",
   "PreviewInSolutionExplorer": false
 }

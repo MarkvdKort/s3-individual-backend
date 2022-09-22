@@ -21,7 +21,7 @@ namespace HoopflixAPI.Controllers
             return _likeRepository.GetLikesFromUser(id);
         }
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Like>> Delete(int id)
+        public async Task<ActionResult<Like>> DeleteLike(int id)
         {
             //var deleteBook = await likeRepository.get(id);
             //if (deleteBook == null)

@@ -15,7 +15,7 @@ namespace HoopflixAPI.Controllers
             this.iViewHistoryRepository = iViewHistoryRepository;
         }
         [HttpGet("{id}")]
-        public List<ViewHistory> GetLikesByID(int id)
+        public List<ViewHistory> GetViewHistoryFromUser(int id)
         {
             return iViewHistoryRepository.GetViewHistoryFromUser(id);
         }
@@ -31,10 +31,15 @@ namespace HoopflixAPI.Controllers
             return NoContent();
         }
         [HttpPost]
-        public async Task<ActionResult<ViewHistory>> CreateLike([FromBody] ViewHistory viewHistory)
+        public async Task<ActionResult<ViewHistory>> CreateViewHistory([FromBody] ViewHistory viewHistory)
         {
             var newViewHistory = await iViewHistoryRepository.Create(viewHistory);
             return newViewHistory;
+        }
+        [HttpGet("{userid} {videoid}")]
+        public ViewHistory GetCertainViewHistory(int userid, int videoid)
+        {
+            return iViewHistoryRepository.GetCertainViewHistory(userid, videoid);
         }
     }
 }

@@ -26,5 +26,10 @@ namespace HoopflixAPI.Repositories
             currentlyWatchingContext.CurrentlyWatching.Remove(like);
             await currentlyWatchingContext.SaveChangesAsync();
         }
+        public CurrentlyWatching GetCertainCurrentlyWatching(int userid, int videoid)
+        {
+            CurrentlyWatching watching = currentlyWatchingContext.CurrentlyWatching.FirstOrDefault(x => x.UserID == userid && x.VideoID == videoid);
+            return watching;
+        }
     }
 }

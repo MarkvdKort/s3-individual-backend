@@ -7,5 +7,6 @@ namespace HoopflixAPI.Repositories
         Task Delete(int userid, int videoID);
         List<CurrentlyWatching> GetCurrentlyWatchingsFromUser(int userid);
         Task<CurrentlyWatching> Create(CurrentlyWatching currentlyWatching);
+        CurrentlyWatching GetCertainCurrentlyWatching(int userid, int videoid);
     }
 }

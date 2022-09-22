@@ -14,13 +14,13 @@ namespace HoopflixAPI.Controllers
         {
             this.currentlyWatchingRepository = currentlyWatchingRepository;
         }
-        [HttpGet("{id}")]
-        public List<CurrentlyWatching> GetLikesByID(int id)
+        [HttpGet("{userid}")]
+        public List<CurrentlyWatching> GetCurrentlyWatchingsByID(int userid)
         {
-            return currentlyWatchingRepository.GetCurrentlyWatchingsFromUser(id);
+            return currentlyWatchingRepository.GetCurrentlyWatchingsFromUser(userid);
         }
         [HttpDelete("{userid} {videoid}")]
-        public async Task<ActionResult<Like>> DeleteCurrentlyWatching(int userid, int videoid)
+        public async Task<ActionResult<CurrentlyWatching>> DeleteCurrentlyWatching(int userid, int videoid)
         {
             //var deleteBook = await likeRepository.get(id);
             //if (deleteBook == null)
@@ -30,8 +30,19 @@ namespace HoopflixAPI.Controllers
             await currentlyWatchingRepository.Delete(userid, videoid);
             return NoContent();
         }
+        [HttpGet("{userid} {videoid}")]
+        public CurrentlyWatching GetCertainCurrentlyWatching(int userid, int videoid)
+        {
+            //var deleteBook = await likeRepository.get(id);
+            //if (deleteBook == null)
+            //{
+            //    return NotFound();
+            //}
+            CurrentlyWatching currentlyWatching = currentlyWatchingRepository.GetCertainCurrentlyWatching(userid, videoid);
+            return currentlyWatching;
+        }
         [HttpPost]
-        public async Task<ActionResult<CurrentlyWatching>> CreateLike([FromBody] CurrentlyWatching currentlyWatching)
+        public async Task<ActionResult<CurrentlyWatching>> CreateCurrentlyWatching([FromBody] CurrentlyWatching currentlyWatching)
         {
             var newUser = await currentlyWatchingRepository.Create(currentlyWatching);
             return null;

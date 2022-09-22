@@ -20,6 +20,11 @@ namespace HoopflixAPI.Repositories
             List<ViewHistory> watching = viewHistoryContext.ViewHistory.Where(x => x.UserID == userid).ToList();
             return watching;
         }
+        public ViewHistory GetCertainViewHistory(int userid, int videoid)
+        {
+            ViewHistory viewHistory = viewHistoryContext.ViewHistory.FirstOrDefault(x => x.UserID == userid && x.VideoID == videoid);
+            return viewHistory;
+        }
         public async Task Delete(int userid, int videoID)
         {
             var like = viewHistoryContext.ViewHistory.First(x => x.UserID == userid && x.VideoID == videoID);
