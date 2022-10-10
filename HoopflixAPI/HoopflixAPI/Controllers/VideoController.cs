@@ -15,9 +15,24 @@ namespace HoopflixAPI.Controllers
             this.iVideoRepository = iVideoRepository;
         }
         [HttpGet]
-        public Video GetAllVideos()
+        public List<Video> GetAllVideos()
         {
             return iVideoRepository.GetAllVideos();
+        }
+        [HttpGet("{id}")]
+        public Video GetVideoById(int id)
+        {
+            return iVideoRepository.GetVideoById(id);
+        }
+        [HttpGet("/Video/Liked/{userid}")]
+        public List<Video> GetLikedVideos(int userid)
+        {
+            return iVideoRepository.GetAllLikedVideos(userid);
+        }
+        [HttpGet("/Video/MyList/{userid}")]
+        public List<Video> GetAllVideosFromMyList(int userid)
+        {
+            return iVideoRepository.GetAllVideosFromMyList(userid);
         }
     }
 }

@@ -15,7 +15,9 @@ builder.Services.AddDbContext<LikeContext>(o => o.UseSqlServer("Data Source=LAPT
 builder.Services.AddDbContext<CurrentlyWatchingContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
 builder.Services.AddDbContext<ViewHistoryContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
 builder.Services.AddDbContext<VideoContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
+builder.Services.AddDbContext<MyListContext>(o => o.UseSqlServer("Data Source=LAPTOP-SUOCM14P\\SQLEXPRESS;Initial Catalog=HoopFlix;Integrated Security=True"));
 builder.Services.AddScoped<IVideoRepository, VideoRepository>();
+builder.Services.AddScoped<IMylistRepository, MyListRepository>();
 builder.Services.AddScoped<IViewHistoryRepository, ViewHistoryRepository>();
 builder.Services.AddScoped<ILikeRepository, LikeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
