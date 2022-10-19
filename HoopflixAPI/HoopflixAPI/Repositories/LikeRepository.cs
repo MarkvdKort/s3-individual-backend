@@ -21,11 +21,20 @@ namespace HoopflixAPI.Repositories
             List<Like> likes = likeContext.Likes.Where(x => x.UserID == userid).ToList();
             return likes;
         }
-        public async Task Delete(int id)
+        public async Task Delete(int userid, int videoid)
         {
-            var like = await likeContext.Likes.FindAsync(id);
+            var like = likeContext.Likes.First(x=> x.UserID == userid && x.VideoID == videoid);
             likeContext.Likes.Remove(like);
             await likeContext.SaveChangesAsync();
+        }
+        public List<Like> GetCertainLike(int userid, int videoid)
+        {
+            List<Like> likes = likeContext.Likes.Where(x => x.UserID == userid && x.VideoID == videoid).ToList();
+            if(likes.Count == 0)
+            {
+                return null;
+            }
+            return likes;
         }
     }
 }

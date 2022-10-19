@@ -20,15 +20,20 @@ namespace HoopflixAPI.Controllers
         {
             return _likeRepository.GetLikesFromUser(id);
         }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Like>> DeleteLike(int id)
+        [HttpGet("{userid} {videoid}")]
+        public List<Like> GetCertainLike(int userid, int videoid)
+        {
+            return _likeRepository.GetCertainLike(userid,videoid);
+        }
+        [HttpDelete("{userid} {videoid}")]
+        public async Task<ActionResult<Like>> DeleteLike(int userid, int videoid)
         {
             //var deleteBook = await likeRepository.get(id);
             //if (deleteBook == null)
             //{
             //    return NotFound();
             //}
-            await _likeRepository.Delete(id);
+            await _likeRepository.Delete(userid, videoid);
             return NoContent();
         }
         [HttpPost]

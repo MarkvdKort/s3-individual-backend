@@ -34,5 +34,10 @@ namespace HoopflixAPI.Controllers
         {
             return iVideoRepository.GetAllVideosFromMyList(userid);
         }
+        [HttpGet("/api/Video/Suggested/{player}/{team}")]
+        public List<Video> GetSuggestedVideos(string player, string team)
+        {
+            return iVideoRepository.GetSuggestedVideos(player,team);
+        }
     }
 }

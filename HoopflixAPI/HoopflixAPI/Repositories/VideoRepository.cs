@@ -102,5 +102,10 @@ namespace HoopflixAPI.Repositories
             }
             return LikedVideos;
         }
+        public List<Video> GetSuggestedVideos(string player, string team)
+        {
+            List<Video> videos = videoContext.Videos.Where(x => x.Player == player || x.Team == team).ToList();
+            return videos;
+        }
     }
 }
