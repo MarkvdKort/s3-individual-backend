@@ -47,5 +47,11 @@ namespace HoopflixAPI.Controllers
             var newUser = await currentlyWatchingRepository.Create(currentlyWatching);
             return null;
         }
+        [HttpPut]
+        public async Task Update([FromBody] CurrentlyWatching currentlyWatching)
+        {
+            await currentlyWatchingRepository.Update(currentlyWatching);
+
+        }
     }
 }

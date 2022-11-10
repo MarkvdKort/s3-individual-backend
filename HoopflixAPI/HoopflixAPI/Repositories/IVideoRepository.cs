@@ -8,6 +8,6 @@ namespace HoopflixAPI.Repositories
         Video GetVideoById(int id);
         List<Video> GetAllLikedVideos(int userid);
         List<Video> GetAllVideosFromMyList(int userid);
-        List<Video> GetSuggestedVideos(string player, string team);
+        List<Video> GetSuggestedVideos(string player, string team, int id);
     }
 }

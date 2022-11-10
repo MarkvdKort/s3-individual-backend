@@ -31,5 +31,11 @@ namespace HoopflixAPI.Repositories
             CurrentlyWatching watching = currentlyWatchingContext.CurrentlyWatching.FirstOrDefault(x => x.UserID == userid && x.VideoID == videoid);
             return watching;
         }
+        public async Task Update(CurrentlyWatching currentlyWatching)
+        {
+            CurrentlyWatching watching = currentlyWatchingContext.CurrentlyWatching.First(x=> x.UserID == currentlyWatching.UserID && x.VideoID == currentlyWatching.VideoID);
+            watching.TimeStamp = currentlyWatching.TimeStamp;
+            await currentlyWatchingContext.SaveChangesAsync();
+        }
     }
 }
