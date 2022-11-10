@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4yGi7MtRFASp4Is6X/K8G0QXdyH3cqsubFxcgxPtCvhjkTuvjdpCPBOgYvBK/D/GZLFOyjYSWkg2h/2u2vnZ5g==",
+  "dgSpecHash": "t12zboW53/vRcV3Wwe3dx6OouV2safPEUWKvsOjBEGrqROVqyiBksSv0fa0bhAj6n2J59V/NbE3/iulOR7dx1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\markv\\Source\\Repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
+  "projectFilePath": "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\markv\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\markv\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

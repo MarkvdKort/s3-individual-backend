@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoopflixAPI", "HoopflixAPI\HoopflixAPI.csproj", "{79180D8B-1161-4629-A90B-C7281BC121EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoopflixAPI", ".\HoopflixAPI\HoopflixAPI.csproj", "{79180D8B-1161-4629-A90B-C7281BC121EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
