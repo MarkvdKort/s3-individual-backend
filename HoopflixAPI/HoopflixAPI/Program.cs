@@ -1,6 +1,7 @@
 using HoopflixAPI.Models;
 using HoopflixAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +30,23 @@ builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 
 
 var app = builder.Build();
-
+int port = Convert.ToInt32(Environment.GetEnvironmentVariable("ASPNETCORE_HTTPS_PORT") ?? "4000");
+if (!builder.Environment.IsDevelopment())
+{
+    builder.WebHost.ConfigureKestrel(serveroptions =>
+    {
+        serveroptions.ListenAnyIP(4000, listenoptions =>
+        {
+            listenoptions.UseHttps("certhttps.pfx", "PasswordAPI");
+        });
+        serveroptions.ListenAnyIP(80);
+    });
+    builder.Services.AddHttpsRedirection(options =>
+    {
+        options.RedirectStatusCode = (int)HttpStatusCode.TemporaryRedirect;
+        options.HttpsPort = port;
+    });
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

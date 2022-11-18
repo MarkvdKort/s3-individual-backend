@@ -15,7 +15,7 @@ namespace HoopflixAPI.Controllers
             this.iMessageRepository = iMessageRepository;
         }
         [HttpGet("{chatid}")]
-        public List<Message> GetMessagesFromCertainChat(int chatid)
+        public List<VideoMessage> GetMessagesFromCertainChat(int chatid)
         {
             return iMessageRepository.GetMessagesFromCertainChat(chatid);
         }
@@ -23,7 +23,7 @@ namespace HoopflixAPI.Controllers
         public async Task<ActionResult<Message>> CreateChat([FromBody] Message message)
         {
             await iMessageRepository.CreateMessage(message);
-            return null;
+            return message;
         }
         [HttpPut("{chatid}/{userid}")]
         public async Task SetMessagesToRead(int chatid, int userid)

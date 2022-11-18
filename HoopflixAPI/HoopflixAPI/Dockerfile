@@ -4,9 +4,15 @@ COPY . .
 RUN dotnet restore ".\HoopflixAPI\HoopflixAPI\HoopflixAPI.csproj" --disable-parallel
 RUN dotnet publish ".\HoopflixAPI\HoopflixAPI\HoopflixAPI.csproj" -c release -o /app --no-restore
 
+WORKDIR /cert
+RUN dotnet dev-certs https -ep certhttps.pfx -p PasswordAPI
+
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
+COPY --from=build /cert ./app
+
 WORKDIR /app
-COPY --from=build  /app ./
+COPY --from=build /app ./
+
 EXPOSE 4000
 EXPOSE 80
 
