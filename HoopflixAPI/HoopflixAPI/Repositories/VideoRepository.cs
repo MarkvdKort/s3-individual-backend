@@ -7,11 +7,17 @@ namespace HoopflixAPI.Repositories
         private readonly VideoContext videoContext;
         private readonly LikeContext likeContext;
         private readonly MyListContext myListContext;
-        public VideoRepository(VideoContext videoContext, LikeContext likeContext, MyListContext myListContext)
+        private readonly CurrentlyWatchingContext currentlyWatchingContext;
+        private readonly ViewHistoryContext viewHistoryContext;
+        private readonly MessageContext messageContext;
+        public VideoRepository(VideoContext videoContext, LikeContext likeContext, MyListContext myListContext, CurrentlyWatchingContext currentlyWatchingContext, ViewHistoryContext viewHistoryContext, MessageContext messageContext)
         {
             this.videoContext = videoContext;
             this.likeContext = likeContext;
             this.myListContext = myListContext;
+            this.currentlyWatchingContext = currentlyWatchingContext;
+            this.viewHistoryContext = viewHistoryContext;
+            this.messageContext = messageContext;
         }
         public List<Video> GetAllVideos()
         {
@@ -20,7 +26,7 @@ namespace HoopflixAPI.Repositories
         }
         public Video GetVideoById(int id)
         {
-            Video video = videoContext.Videos.First(x => x.ID == id);
+            Video video = videoContext.Videos.FirstOrDefault(x => x.ID == id);
             return video;
 
         }
@@ -106,6 +112,42 @@ namespace HoopflixAPI.Repositories
         {
             List<Video> videos = videoContext.Videos.Where(x => (x.Player == player || x.Team == team) && x.ID != id).ToList();
             return videos;
+        }
+        public async Task Delete(int videoID)
+        {
+            var video = videoContext.Videos.FirstOrDefault(x => x.ID == videoID);
+            List<CurrentlyWatching> currentlyWatchings = currentlyWatchingContext.CurrentlyWatching.Where(x => x.VideoID == videoID).ToList();
+            List<MyList> myLists = myListContext.MyList.Where(x => x.VideoID == videoID).ToList();
+            List<Like> likes = likeContext.Likes.Where(x => x.VideoID == videoID).ToList();
+            List<ViewHistory> viewHistories = viewHistoryContext.ViewHistory.Where(x => x.VideoID == videoID).ToList();
+            List<Message> messages = messageContext.Messages.Where(x => x.MessageContent == videoID.ToString()).ToList();
+            foreach (var vid in currentlyWatchings)
+            {
+                currentlyWatchingContext.CurrentlyWatching.Remove(vid);
+                await currentlyWatchingContext.SaveChangesAsync();
+            }
+            foreach (var vid in myLists)
+            {
+                myListContext.MyList.Remove(vid);
+                await myListContext.SaveChangesAsync();
+            }
+            foreach (var vid in likes)
+            {
+                likeContext.Likes.Remove(vid);
+                await likeContext.SaveChangesAsync();
+            }
+            foreach (var vid in viewHistories)
+            {
+                viewHistoryContext.ViewHistory.Remove(vid);
+                await viewHistoryContext.SaveChangesAsync();
+            }
+            foreach (var vid in messages)
+            {
+                messageContext.Messages.Remove(vid);
+                await messageContext.SaveChangesAsync();
+            }
+            videoContext.Videos.Remove(video);
+            await videoContext.SaveChangesAsync();
         }
     }
 }
