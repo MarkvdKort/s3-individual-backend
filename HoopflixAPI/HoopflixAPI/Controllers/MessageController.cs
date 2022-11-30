@@ -22,8 +22,8 @@ namespace HoopflixAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Message>> CreateChat([FromBody] Message message)
         {
-            await iMessageRepository.CreateMessage(message);
-            return message;
+            Message message1 = await iMessageRepository.CreateMessage(message);
+            return message1;
         }
         [HttpPut("{chatid}/{userid}")]
         public async Task SetMessagesToRead(int chatid, int userid)

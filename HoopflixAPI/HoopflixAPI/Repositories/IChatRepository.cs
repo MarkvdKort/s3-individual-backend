@@ -6,5 +6,6 @@ namespace HoopflixAPI.Repositories
     {
         List<Chat> GetChatsFromUser(int userid);
         Task<Chat> CreateChat(Chat chat);
+        Chat GetCertainChat(int user1id, int user2id);
     }
 }

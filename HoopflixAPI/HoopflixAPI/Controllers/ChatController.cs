@@ -18,11 +18,21 @@ namespace HoopflixAPI.Controllers
         {
             return iChatRepository.GetChatsFromUser(userid);
         }
+        [HttpGet("{user1id}/{user2id}")]
+        public Chat? GetCertainChat(int user1id, int user2id)
+        {
+            Chat chat = iChatRepository.GetCertainChat(user1id, user2id);
+            if(chat == null)
+            {
+                return null;
+            }
+            return iChatRepository.GetCertainChat(user1id, user2id);
+        }
         [HttpPost]
         public async Task<ActionResult<Chat>> CreateChat([FromBody] Chat chat)
         {
             await iChatRepository.CreateChat(chat);
-            return null;
+            return chat;
         }
     }
 }
