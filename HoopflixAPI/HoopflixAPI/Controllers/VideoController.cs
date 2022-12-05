@@ -2,6 +2,7 @@
 using HoopflixAPI.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace HoopflixAPI.Controllers
 {
@@ -40,15 +41,14 @@ namespace HoopflixAPI.Controllers
             return iVideoRepository.GetSuggestedVideos(player,team, id);
         }
         [HttpDelete("{videoid}")]
-        public async Task<ActionResult<ViewHistory>> DeleteVideo(int videoid)
+        public async Task<ActionResult<HttpResponseMessage>> DeleteVideo(int videoid)
         {
             var video = iVideoRepository.GetVideoById(videoid);
-            if (video == null)
-            {
-                return NotFound();
-            }
-            await iVideoRepository.Delete(videoid);
-            return NoContent();
+            //if(video == null)
+            //{
+            //    return NoContent();
+            //}
+            return Ok(iVideoRepository.Delete(videoid));
         }
     }
 }

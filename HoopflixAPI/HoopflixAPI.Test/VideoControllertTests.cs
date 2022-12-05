@@ -14,19 +14,66 @@ namespace HoopflixAPI.Test
     public class VideoControllertTests
     {
         [Fact]
-        public async void User_Can_Get_List_Of_Brands()
+        public async void GetVideoByID_Returns_Video_When_Exists()
         {
             // Arrange
             var videoRepositoryMock = MockIVideoRepository.GetMock();
-            var brandController = new VideoController(videoRepositoryMock.Object);
+            var videoController = new VideoController(videoRepositoryMock.Object);
 
             // Act
-            var response =  brandController.GetAllVideos();
+            var response = videoController.GetVideoById(1);
 
 
             // Assert
-            Assert.IsAssignableFrom<List<Video>>(response);
-            Assert.NotEmpty(response as List<Video>);
+            Assert.NotNull(response);
+            Assert.IsAssignableFrom<Video>(response);
+        }
+        [Fact]
+        public async void GetVideoByID_Returns_Null_When_Video_Does_Not_Exists()
+        {
+            // Arrange
+            var videoRepositoryMock = MockIVideoRepository.GetMock();
+            var videoController = new VideoController(videoRepositoryMock.Object);
+
+            // Act
+            var response = videoController.GetVideoById(100);
+
+
+            // Assert
+            Assert.Null(response);
+            //Assert.IsAssignableFrom<Video>(response);
+        }
+        [Fact]
+        
+        public async void Video_Is_Deleted_When_Exists()
+        {
+            // Arrange
+            var videoRepositoryMock = MockIVideoRepository.GetMock();
+            var videoController = new VideoController(videoRepositoryMock.Object);
+
+            // Act
+            var request = await videoController.DeleteVideo(1);
+            var response = request.Result as ObjectResult;
+            
+            // Assert
+            
+            Assert.Equal(StatusCodes.Status200OK, response.StatusCode); 
+            //Assert.IsAssignableFrom<Video>(response);
+        }
+        [Fact]
+        public async void Video_Is__Not_Deleted_When_Video_Does_Not_Exist()
+        {
+            // Arrange
+            var videoRepositoryMock = MockIVideoRepository.GetMock();
+            var videoController = new VideoController(videoRepositoryMock.Object);
+
+            // Act
+            var videosBeforeDelete = videoController.GetAllVideos();
+            var request = await videoController.DeleteVideo(100);
+            var videosafterDelete = videoController.GetAllVideos();
+
+            // Assert
+            Assert.Equal(videosBeforeDelete, videosafterDelete);
         }
     }
 }

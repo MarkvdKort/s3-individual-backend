@@ -35,8 +35,8 @@ namespace HoopflixAPI.Test.Mocks
 
             mock.Setup(m => m.GetAllVideos())
                  .Returns(() => (videos));
-
-
+            mock.Setup(m => m.GetVideoById(It.IsAny<int>()))
+                .Returns((int id) => videos.FirstOrDefault(o => o.ID == id));
 
             //mock.Setup(m => m.CreateBrand(It.IsAny<Brand>()))
             //     .Callback(() => { return; });
