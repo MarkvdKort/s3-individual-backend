@@ -44,10 +44,10 @@ namespace HoopflixAPI.Controllers
         public async Task<ActionResult<HttpResponseMessage>> DeleteVideo(int videoid)
         {
             var video = iVideoRepository.GetVideoById(videoid);
-            //if(video == null)
-            //{
-            //    return NoContent();
-            //}
+            if (video == null)
+            {
+                return NotFound("");
+            }
             return Ok(iVideoRepository.Delete(videoid));
         }
     }

@@ -4,7 +4,7 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoopflixAPI", "HoopflixAPI\HoopflixAPI.csproj", "{79180D8B-1161-4629-A90B-C7281BC121EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoopflixAPI.Test", "HoopflixAPI.Test\HoopflixAPI.Test.csproj", "{D89FB65F-DAF7-499E-9E28-7DFB64270FD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoopflixAPI.Test", "..\HoopflixAPI.Test\HoopflixAPI.Test.csproj", "{8F444A9E-36F5-4659-BF97-ACD85298E9AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		{79180D8B-1161-4629-A90B-C7281BC121EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79180D8B-1161-4629-A90B-C7281BC121EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79180D8B-1161-4629-A90B-C7281BC121EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D89FB65F-DAF7-499E-9E28-7DFB64270FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D89FB65F-DAF7-499E-9E28-7DFB64270FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D89FB65F-DAF7-499E-9E28-7DFB64270FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D89FB65F-DAF7-499E-9E28-7DFB64270FD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F444A9E-36F5-4659-BF97-ACD85298E9AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F444A9E-36F5-4659-BF97-ACD85298E9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F444A9E-36F5-4659-BF97-ACD85298E9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F444A9E-36F5-4659-BF97-ACD85298E9AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
