@@ -26,7 +26,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-build --verbosity normal
   Deploy: 
     name: Push Docker image to docker hub
     needs: build
