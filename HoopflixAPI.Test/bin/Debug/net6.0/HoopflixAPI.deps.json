@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.8",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.15.1",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "xunit.runner.console": "2.4.2"
         },
         "runtime": {
           "HoopflixAPI.dll": {}
@@ -629,7 +630,8 @@
             "fileVersion": "4.700.19.56404"
           }
         }
-      }
+      },
+      "xunit.runner.console/2.4.2": {}
     }
   },
   "libraries": {
@@ -1050,6 +1052,13 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "xunit.runner.console/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aiT5umBAiGm6r8y9wAkqeGtojtMpMi+qeTUq6eg53x5utBgX+c49in/Oq+ZDg57gAfbMlYoNChOv2LbC7K9Q4g==",
+      "path": "xunit.runner.console/2.4.2",
+      "hashPath": "xunit.runner.console.2.4.2.nupkg.sha512"
     }
   }
 }
