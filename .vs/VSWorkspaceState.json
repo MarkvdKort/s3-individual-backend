@@ -2,6 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\HoopflixAPI",
+    "\\HoopflixAPI.Test",
+    "\\HoopflixAPI.Test\\Mocks",
     "\\HoopflixAPI\\HoopflixAPI",
     "\\HoopflixAPI\\HoopflixAPI\\Controllers",
     "\\HoopflixAPI\\HoopflixAPI\\Models"
