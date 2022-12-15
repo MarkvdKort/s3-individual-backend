@@ -1,5 +1,6 @@
 ﻿using HoopflixAPI.Models;
 using HoopflixAPI.Repositories;
+using Microsoft.AspNetCore.Http;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace HoopflixAPI.Test.Mocks
             {
                 new VideoMessage()
                 {
-                    Message =
+                    Message = new Message()
                     {
                         ID = 1,
                         ChatID = 1,
@@ -29,7 +30,7 @@ namespace HoopflixAPI.Test.Mocks
                         Type="Video"
 
                     },
-                    Video =
+                    Video = new Video()
                     {
                         ID = 1,
                         Name = "Test1",
@@ -62,6 +63,8 @@ namespace HoopflixAPI.Test.Mocks
 
             mock.Setup(m => m.GetMessagesFromCertainChat(It.IsAny<int>()))
                 .Returns((int id) => videoMessages.Where(o => o.Message.ChatID == id).ToList());
+            mock.Setup(m => m.CreateMessage(It.IsAny<Message>()))
+                .Callback(() => { return; });
 
             return mock;
         }
