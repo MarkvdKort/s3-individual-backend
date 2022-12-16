@@ -25,7 +25,7 @@ namespace HoopflixAPI.Test
 
 
             // Assert
-            Assert.NotNull(response);
+            Assert.Null(response);
             Assert.IsAssignableFrom<Video>(response);
         }
         [Fact]
