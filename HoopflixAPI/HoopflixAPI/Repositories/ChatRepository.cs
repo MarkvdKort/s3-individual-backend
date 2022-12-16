@@ -16,12 +16,12 @@ namespace HoopflixAPI.Repositories
         }
         public Chat GetCertainChat(int user1id, int user2id)
         {
-            Chat chat = chatContext.Chats.FirstOrDefault(x => (x.User1ID == user1id || x.User2ID == user1id) && (x.User1ID == user2id || x.User2ID == user2id));
+            Chat chat = chatContext.Chats.First(x => (x.User1ID == user1id || x.User2ID == user1id) && (x.User1ID == user2id || x.User2ID == user2id));
             return chat;
         }
         public Chat GetChatByID(int id)
         {
-            Chat chat = chatContext.Chats.FirstOrDefault(x => x.ID == id);
+            Chat chat = chatContext.Chats.First(x => x.ID == id);
                 return chat;
         }
         public async Task<Chat> CreateChat(Chat chat)
