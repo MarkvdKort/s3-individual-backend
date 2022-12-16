@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj": {}
+    "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj": {
+    "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
+        "projectUniqueName": "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
         "projectName": "HoopflixAPI",
-        "projectPath": "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
+        "projectPath": "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI\\HoopflixAPI\\HoopflixAPI.csproj",
         "packagesPath": "C:\\Users\\markv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI\\HoopflixAPI\\obj\\",
+        "outputPath": "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI\\HoopflixAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

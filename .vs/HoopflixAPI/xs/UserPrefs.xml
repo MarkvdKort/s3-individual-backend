@@ -1,0 +1,5 @@
+﻿<Properties StartupConfiguration="{223A1612-05B3-4D1B-8508-16A136AA7AAD}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.HoopflixAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.HoopflixAPI.Test FirstBuild="True" />
+</Properties>

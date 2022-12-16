@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wIfYN4t+XK0mFw4hLNO97boeuakq0nxbqAglgb5YWXS39Vf+rKP2Q6SKfvCCkXQqkaUH/XrjsQnHzXzBDF2N/Q==",
+  "dgSpecHash": "TccAu+OJYdySr1Y+Z+vPtAMby4vUjbB5mOgbA9+JiN0hfK5prJYEHxRzJKecwuWkPAQ//3UZOkQcON40ybRi1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\markv\\source\\repos\\s3-individual-backend\\HoopflixAPI.Test\\HoopflixAPI.Test.csproj",
+  "projectFilePath": "C:\\Users\\markv\\Downloads\\markvdkort\\markvdkort\\HoopflixAPI.Test\\HoopflixAPI.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\markv\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\markv\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",

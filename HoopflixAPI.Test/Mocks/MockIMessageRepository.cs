@@ -26,7 +26,7 @@ namespace HoopflixAPI.Test.Mocks
                         UserID = 1,
                         MessageContent = "1",
                         Time = DateTime.Now.ToString(),
-                        New = 1, 
+                        New = 1,
                         Type="Video"
 
                     },
@@ -42,7 +42,7 @@ namespace HoopflixAPI.Test.Mocks
                         Team = "team",
                         Thumbnail = "thumbnail"
                     }
-                    
+
 
 
                 },

@@ -36,7 +36,7 @@ namespace HoopflixAPI.Test
             var messageRepositoryMock = MockIMessageRepository.GetMock();
             var videoRepositoryMock = MockIVideoRepository.GetMock();
             var chatRepositoryMock = MockIChatRepository.GetMock();
-            var messageController = new MessageController(messageRepositoryMock.Object, chatRepositoryMock.Object,videoRepositoryMock.Object );
+            var messageController = new MessageController(messageRepositoryMock.Object, chatRepositoryMock.Object, videoRepositoryMock.Object);
 
             // Act
             var request = messageController.GetMessagesFromCertainChat(10);
