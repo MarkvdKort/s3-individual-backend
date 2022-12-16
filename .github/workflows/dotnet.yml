@@ -27,7 +27,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: | 
-        cd HoopflixAPI.Test
+        cd HoopflixAPI
         dotnet test --no-restore --verbosity normal
   Deploy: 
     name: Push Docker image to docker hub
