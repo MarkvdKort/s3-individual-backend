@@ -24,11 +24,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: | 
-        cd HoopflixAPI
-        dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-build --verbosity normal
   Deploy: 
     name: Push Docker image to docker hub
     needs: build
@@ -51,3 +49,4 @@ jobs:
           context: .
           push: true
           tags: markvdkort/s3-individual-backend:latest
+
