@@ -26,7 +26,7 @@ namespace HoopflixAPI.Repositories
         }
         public Video GetVideoById(int id)
         {
-            Video video = videoContext.Videos.FirstOrDefault(x => x.ID == id);
+            Video video = videoContext.Videos.First(x => x.ID == id);
             return video;
 
         }
