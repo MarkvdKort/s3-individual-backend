@@ -40,6 +40,7 @@ namespace HoopflixAPI.Controllers
         public async Task<ActionResult<Like>> Create([FromBody] Like like)
         {
             var newUser = await _likeRepository.Create(like);
+
             return newUser;
         }
     }
